@@ -1,0 +1,117 @@
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+override-redirect = true
+
+[bar/bar]
+background     = ${xrdb:color1}
+foreground     = ${xrdb:color0}
+
+height         = 40
+width          = 40
+offset-x       = 32
+offset-y       = 152
+
+bottom         = true
+fixed-center   = true
+font-0         = xos4 Terminus:style=Bold:size=12 
+font-1	       = FontAwesome:style=Regular
+modules-center = display
+
+wm-name        = bar
+enable-ipc     = true
+
+[module/display]
+type           = custom/text
+content        = pwr
+click-left     = exec i3lock -u --fuzzy
+click-right    = shutdown now
+
+[bar/bar1]
+inherit        = bar/bar
+background     = ${xrdb:color0}
+foreground     = ${xrdb:color1}
+modules-center = brit 
+width          = 40
+offset-y       = 112
+
+[module/brit]
+type           = custom/script
+interval       = 5
+exec           = ~/scripts/polybar/brit
+
+[bar/bar2]
+inherit        = bar/bar
+background     = ${xrdb:color0}
+foreground     = ${xrdb:color1}
+modules-center = alrt
+width          = 40 
+offset-y       = 72
+
+[module/alrt]
+type           = custom/script
+interval       = 5
+exec           = ~/scripts/polybar/alrt
+
+[bar/bar3]
+inherit        = bar/bar
+background     = ${xrdb:color0}
+foreground     = ${xrdb:color7}
+modules-center = date bat0 bat1
+width          = 120
+offset-y       = 32
+separator      = " - "
+
+[module/bat0]
+type           = custom/script
+interval       = 5
+exec           = ~/scripts/polybar/bat0
+
+[module/bat1]
+type           = custom/script
+interval       = 5
+exec           = ~/scripts/polybar/bat1
+
+[module/date]
+type = internal/date
+interval = 5
+
+time = %H:%M
+
+label = %time%
+
+[bar/song]
+inherit        = bar/bar
+background     = ${xrdb:color0}
+foreground     = ${xrdb:color1}
+modules-center = mpd
+width          = 400 
+offset-y       = 1000
+offset-x       = 1480
+mpd-format     = <label-song>
+mpdoff-format  = <label-offline>
+
+[bar/player]
+inherit        = bar/bar
+background     = ${xrdb:color1}
+foreground     = ${xrdb:color0}
+modules-center = mpd
+width          = 120 
+offset-y       = 960
+offset-x       = 1760
+mpd-format     = <icon-prev>   <toggle>   <icon-next>
+mpdoff-format  =
+
+[module/mpd]
+type = internal/mpd
+format-online = ${root.mpd-format} 
+format-offline = ${root.mpdoff-format}
+
+label-offline = MPD is offline
+icon-prev = <<
+icon-play = PLAY
+icon-pause = PAUSE 
+icon-next = >>
+
+label-song-maxlen = 360 
+label-song-ellipsis = true
