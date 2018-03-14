@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#
+
+current=`xbacklight -get`
+current=${current%.*}
+
+if [ $current -le 5 ]
+then
+    echo "---"
+elif [ $current -le 20 ]
+then
+    echo "<--"
+elif [ $current -le 50 ]
+then
+    echo "<<-"
+elif [ $current -le 100 ]
+then
+    echo "<<<"
+else
+    echo "-x-"
+fi
+
