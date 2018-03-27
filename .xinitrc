@@ -42,16 +42,11 @@ sh ~/.fehbg &
 # Eye saver
 redshift -l 55:37 &
 
-# Status bar
-polybar bar  &
-polybar bar1 &
-polybar bar2 &
-polybar bar3 &
-polybar player &
-polybar song &
-
 # Composition manager
 compton --config ~/.config/compton.conf &
-
+#
+conky &
 # Window manager
-/usr/local/bin/2bwm
+#/usr/local/bin/2bwm
+sxhkd &
+exec bspwm

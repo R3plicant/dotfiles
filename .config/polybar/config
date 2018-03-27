@@ -1,65 +1,39 @@
 [global/wm]
 margin-top = 0
 margin-bottom = 0
-override-redirect = true
+override-redirect = false
 
 [bar/bar]
-background     = ${xrdb:color1}
-foreground     = ${xrdb:color0}
+background     = ${xrdb:color0}
+foreground     = ${xrdb:color1}
 
-height         = 40
-width          = 40
+height         = 30
+width          = 400
 offset-x       = 32
-offset-y       = 152
+offset-y       = 1050 
+
+modules-left   = bspwm
+modules-center = date bat0 bat1
 
 bottom         = true
 fixed-center   = true
 font-0         = xos4 Terminus:style=Bold:size=12 
 font-1	       = FontAwesome:style=Regular
-modules-center = display
 
-wm-name        = bar
 enable-ipc     = true
-
-[module/display]
-type           = custom/text
-content        = pwr
-click-left     = exec i3lock -u --fuzzy
-click-right    = shutdown now
-
-[bar/bar1]
-inherit        = bar/bar
-background     = ${xrdb:color0}
-foreground     = ${xrdb:color1}
-modules-center = brit 
-width          = 40
-offset-y       = 112
-
-[module/brit]
-type           = custom/script
-interval       = 5
-exec           = ~/scripts/polybar/brit
-
-[bar/bar2]
-inherit        = bar/bar
-background     = ${xrdb:color0}
-foreground     = ${xrdb:color1}
-modules-center = alrt
-width          = 40 
-offset-y       = 72
-
-[module/alrt]
-type           = custom/script
-interval       = 5
-exec           = ~/scripts/polybar/alrt
+wm-restack     = bspwm
+tray-position  = right
+tray-maxsize   = 20
 
 [bar/bar3]
 inherit        = bar/bar
 background     = ${xrdb:color0}
 foreground     = ${xrdb:color7}
+modules-left   = bspwm
 modules-center = date bat0 bat1
-width          = 120
-offset-y       = 32
+width          = 1200
+offset-y       = 0
+offset-x       = 900
 separator      = " - "
 
 [module/bat0]
@@ -115,3 +89,32 @@ icon-next = >>
 
 label-song-maxlen = 360 
 label-song-ellipsis = true
+
+[module/bspwm]
+type = internal/bspwm
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+label-focused            = "×"
+label-focused-background = ${xrdb:color0}
+label-focused-foreground = ${xrdb:color1}
+label-focused-padding    = 1
+
+label-urgent = %name%
+label-urgent-background = ${xrdb:color1}
+label-urgent-foreground = ${xrdb:color0}
+label-urgent-padding = 1
+
+label-empty            = %name%
+label-empty-background = ${xrdb:color0}
+label-empty-foreground = ${xrdb:color2}
+label-empty-padding    = 1
+
+label-occupied            = %name%
+label-occupied-background = ${xrdb:color0}
+label-occupied-foreground = ${xrdb:color1}
+label-occupied-padding    = 1
+
+format-padding = 1
+; vim:ft=dosini

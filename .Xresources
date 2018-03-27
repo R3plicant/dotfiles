@@ -1,93 +1,77 @@
-#define base00 #121c21
-#define base01 #1e2e36
-#define base02 #304b59
-#define base03 #3f6173
-#define base04 #7b8e98
-#define base05 #aaafb2
-#define base06 #bcd9e8
-#define base07 #cfefff
-#define base08 #f0696f
-#define base09 #fa9a6a
-#define base0A #f7cca1
-#define base0B #76a08c
-#define base0C #5f9993
-#define base0D #718c97
-#define base0E #ceb5ce
-#define base0F #877366
-
-*foreground:   base05
-*background:   base00
-*cursorColor:  base05
-
-*color0:       base00
-*color1:       base08
-*color2:       base0B
-*color3:       base0A
-*color4:       base0D
-*color5:       base0E
-*color6:       base0C
-*color7:       base05
-
-*color8:       base03
-*color9:       base09
-*color10:      base01
-*color11:      base02
-*color12:      base04
-*color13:      base06
-*color14:      base0F
-*color15:      base07
+*.foreground:  #f8f8f2
+*.background:  #1e1f29
+*.cursorColor: #bbbbbb
+!
+! Black
+*.color0:      #000000
+*.color8:      #555555
+!
+! Red
+*.color1:      #ff5555
+*.color9:      #ff5555
+!
+! Green
+*.color2:      #50fa7b
+*.color10:     #50fa7b
+!
+! Yellow
+*.color3:      #f1fa8c
+*.color11:     #f1fa8c
+!
+! Blue
+*.color4:      #bd93f9
+*.color12:     #bd93f9
+!
+! Magenta
+*.color5:      #ff79c6
+*.color13:     #ff79c6
+!
+! Cyan
+*.color6:      #8be9fd
+*.color14:     #8be9fd
+!
+! White
+*.color7:      #bbbbbb
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #ffffff
+!*.colorIT:
+!*.colorUL:
 
 ! URxvt
 
 urxvt.termName: rxvt-256color
 urxvt.scrollBar: false
-urxvt.font: -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*, xft:FontAwesome:style=Regular 
+urxvt.internalBorder: 10
+urxvt.font: -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-* 
 !urxvt.font: xft:scientifica:size=11 (waiting for bigger scale.. :P )
 !urxvt.letterSpace: 1
+!urxvt.font: xft:DejaVu Sans Mono:size=11
 urxvt.perl-ext-common: default,matcher
-urxvt.url-launcher: /usr/bin/qutebrowser
-urxvt.matcher.rend.0: Uline Bold fg5
+urxvt.url-launcher: /usr/bin/xdg-open 
+urxvt.matcher.button: 1
+urxvt.matcher.rend.0: Uline Bold fg3
 
 ! 2BWM
 
 twobwm.border_width: 8
 twobwm.outer_border: 6
-twobwm.focus_color: base02
-twobwm.unfocus_color: base01
-twobwm.fixed_color: base0D
-twobwm.unkill_color: base08
-twobwm.fixed_unkill_color: base0E
-twobwm.outer_border_color: base00
-twobwm.inverted_colors: false
-
-! Rofi
-
-rofi.color-enabled: true 
-
-rofi.color-window:    base00 , base00 , base00 , base00 , base05
-rofi.color-normal:    base00 , base05 , base00 , base00 , base0E
-rofi.color-active:    base00 , base0E , base00 , base00 , base05
-rofi.color-urgent:    base00 , base03 , base00 , base00 , base05
-
-rofi.fake-transparency : false
-rofi.font              : xos4\ Terminus\ 12 
-rofi.columns           : 1
-rofi.separator-style   : none
-rofi.hide-scrollbar    : true
-rofi.location          : 0
-rofi.padding           : 12
-rofi.fullscreen        : false
-rofi.width             : 350
-rofi.lines             : 6
-
+!twobwm.focus_color: base02
+!twobwm.unfocus_color: base01
+!twobwm.fixed_color: base0D
+!twobwm.unkill_color: base08
+!twobwm.fixed_unkill_color: base0E
+!twobwm.outer_border_color: base00
+twobwm.inverted_colors: true
 
 ! DPI / Font
 
 Xft.dpi: 96
-!Xft.autohint: 0
-!Xft.antialias: 1
-!Xft.hinting: 1
-!Xft.hintstyle: hintslight
-!Xft.rgba: rgb
-!Xft.lcdfilter: lcddefault
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
 
