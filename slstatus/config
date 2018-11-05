@@ -1,0 +1,9 @@
+static const struct arg args[] = {
+        /* function format          argument */
+        { keymap, " %s",                "" },
+        { datetime, " %s",              "%F %T" },
+        { uptime, " UP:%s",             "" },
+        { battery_perc, " BAT0:%s%%",   "BAT0" },
+        { battery_perc, " BAT1:%s%%",   "BAT1" },
+        { cpu_perc, " CPU:%s%%",        "" },
+};
