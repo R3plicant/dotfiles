@@ -1,5 +1,5 @@
 # dotfiles
-My Arch desktop configuration files
+My Arch Linux desktop configuration files
 
 ![alt text](./desktop.png)
 
