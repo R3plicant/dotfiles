@@ -5,21 +5,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'dracula/vim'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
 
-colorscheme dracula
-let g:airline_theme='dracula'
-let g:airline_powerline_fonts = 1
+colo gruvbox
+set background=dark
 
-set noswapfile
-
+set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
