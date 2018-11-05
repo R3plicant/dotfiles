@@ -13,6 +13,7 @@ filetype plugin indent on
 colo gruvbox
 set background=dark
 
+set number
 set expandtab
 set tabstop=4
 set softtabstop=4
