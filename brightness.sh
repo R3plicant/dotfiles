@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Dependencies: Light
 
@@ -7,20 +7,17 @@
 # $./brightness.sh down
 
 function send_notification {
-    total=`light -G | cut -d '.' -f 1`
-    bar=$(seq -s "─" $((($total + 5) / 5)) | sed 's/[0-9]//g')
-    dunstify -t 5000 -r 2594 -u normal "  $bar"
+    total=`cat /sys/class/backlight/intel_backlight/brightness`
+    dunstify -t 2000 -r 2594 -u normal "Brightness: $total"
 }
 
 case $1 in
     up)
-        #increase brightness by 5%
-        light -A 5
+        light -A 1 > /dev/null
         send_notification
         ;;
     down)
-        #decrease brightness by 5%
-        light -U 5
+        light -U 1 > /dev/null
         send_notification
         ;;
 esac
