@@ -13,8 +13,5 @@ XF86AudioMicMute
 XF86MonBrightness{Up,Down}
     ~/scripts/brightness.sh {up,down}
 
-super + g
-    chromium
-
 Alt_R
     ~/scripts/keymap.sh
