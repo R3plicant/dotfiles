@@ -1,0 +1,20 @@
+XF86AudioRaiseVolume
+    ~/scripts/volume.sh up
+
+XF86AudioLowerVolume
+    ~/scripts/volume.sh down
+
+XF86AudioMute
+    ~/scripts/volume.sh mute 
+
+XF86AudioMicMute
+    ~/scripts/volume.sh mic
+
+XF86MonBrightness{Up,Down}
+    ~/scripts/brightness.sh {up,down}
+
+super + g
+    chromium
+
+Alt_R
+    ~/scripts/keymap.sh
